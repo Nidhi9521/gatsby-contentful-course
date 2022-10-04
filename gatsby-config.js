@@ -42,7 +42,6 @@ module.exports = {
         },
         `gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,
-        `gatsby-plugin-image`,
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
