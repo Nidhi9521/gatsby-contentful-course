@@ -1,11 +1,13 @@
 import React from "react";
-import { Layout, RichText } from "components";
+import { Layout, RichText, Seo } from "components";
 import { graphql } from "gatsby";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 export default function ContentfulPage(props) {
-  console.log(props.data.contentfulPage.title);
   return (
     <Layout>
+      <Seo
+        title={props.data.contentfulPage.title}
+        description={props.data.contentfulPage.description}
+      />
       {!!props.data.contentfulPage.pageContent && (
         <RichText
           references={props.data.contentfulPage.pageContent.references}
@@ -18,17 +20,38 @@ export default function ContentfulPage(props) {
 
 export const query = graphql`
   query pageQuery($id: String) {
-    contentfulPage(id: { eq: $id }, homePage: {}) {
+    contentfulPage(id: { eq: $id }) {
       slug
       title
+      description
       pageContent {
         raw
         references {
+          ... on ContentfulAsset {
+            __typename
+            contentful_id
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
           ... on ContentfulHero {
+            __typename
+            contentful_id
             heading
             subHeadig
             backgroundImage {
               gatsbyImageData(layout: FULL_WIDTH)
+            }
+          }
+          ... on ContentfulPriceGroup {
+            __typename
+            contentful_id
+            priceOption {
+              id
+              title
+              amountPerMonth
+              description {
+                raw
+              }
+              mostPopular
             }
           }
         }

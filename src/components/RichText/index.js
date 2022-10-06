@@ -7,6 +7,7 @@ import { Wrapper, ImageWrapper } from "./style";
 
 export const RichText = ({ raw, references = [] }) => {
   const referencesMap = {};
+
   references.forEach((reference) => {
     referencesMap[reference.contentful_id] = reference;
   });
@@ -23,24 +24,24 @@ export const RichText = ({ raw, references = [] }) => {
       },
       [BLOCKS.EMBEDDED_ENTRY]: (node) => {
         const data = referencesMap[node.data.target.sys.id];
+        console.log(data);
         switch (data.__typename) {
           case "ContentfulHero":
             return (
               <Hero
                 heading={data.heading}
-                subHeading={data.subHeading}
+                subHeadig={data.subHeadig}
                 backgroundImage={data.backgroundImage.gatsbyImageData}
               />
             );
           case "ContentfulPriceGroup":
-            return <PriceGroup priceOptions={data.priceOptions} />;
+            return <PriceGroup priceOption={data.priceOption} />;
           default:
             return null;
         }
       },
     },
   };
-
   return (
     <Wrapper>{documentToReactComponents(JSON.parse(raw), options)}</Wrapper>
   );

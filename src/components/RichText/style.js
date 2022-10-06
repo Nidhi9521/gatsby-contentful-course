@@ -14,6 +14,8 @@ export const Wrapper = styled.div`
 `;
 
 export const ImageWrapper = styled.div`
-  max-width: 1000px;
-  margin: 0 auto;
+  height: 25%;
+  width: 25%;
+  margin-left: auto;
+  margin-right: auto;
 `;

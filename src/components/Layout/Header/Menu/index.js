@@ -6,6 +6,14 @@ const Menu = () => {
     fragment menuItemData on ContentfulMenuItem {
       id
       label
+      page {
+        ... on ContentfulPage {
+          slug
+        }
+        ... on ContentfulBlog {
+          slug
+        }
+      }
     }
 
     query MenuQuery {
@@ -14,12 +22,6 @@ const Menu = () => {
           ...menuItemData
           subMenuItem {
             ...menuItemData
-            page {
-              slug
-            }
-          }
-          page {
-            slug
           }
         }
       }
@@ -46,6 +48,9 @@ const Menu = () => {
           )}
         </MenuItem>
       ))}
+      <MenuItem>
+        <Link to="/contact">Contact</Link>
+      </MenuItem>
     </MenuWrapper>
   );
 };

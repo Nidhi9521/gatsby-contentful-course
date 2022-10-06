@@ -1,6 +1,5 @@
 import React from "react";
 import { createGlobalStyle } from "styled-components";
-import { graphql, useStaticQuery } from "gatsby";
 import Header from "./Header";
 const GlobalStyle = createGlobalStyle`
   body{
@@ -16,7 +15,6 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export const Layout = ({ children }) => {
-  
   // console.log(result.allContentfulMenu);
   // result.allContentfulMenu.nodes.forEach((element) => {
   //   console.log(element.entryTitle);
@@ -32,7 +30,6 @@ export const Layout = ({ children }) => {
       <GlobalStyle />
       <Header />
       <section>{children}</section>
-      
     </div>
   );
 };

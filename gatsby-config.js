@@ -6,7 +6,7 @@ module.exports = {
     siteMetadata: {
         title: `Gatsby Contentful Starter`,
         description: `Starter repo to to use with the Gatsby & Contentful course`,
-        author: `@tomphill`,
+        author: `abc`,
     },
     plugins: [
         {
