@@ -1,13 +1,13 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { Layout, RichText, Seo } from "../../components/index";
+import { Layout, RichText, SEO } from "../../components/index";
 
 const BlogPost = (props) => {
   console.log("blogpost page");
   console.log(props);
   return (
     <Layout>
-      <Seo
+      <SEO
         title={props.data.contentfulBlogPost.title}
         description={props.data.contentfulBlogPost.description}
       />
