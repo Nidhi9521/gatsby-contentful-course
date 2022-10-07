@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout, RichText, Seo } from "components";
+import { Layout, RichText, Seo } from "../components/index";
 import { graphql } from "gatsby";
 export default function ContentfulPage(props) {
   return (

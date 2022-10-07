@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { Layout, RichText, Seo } from "components";
+import { Layout, RichText, Seo } from "../../components/index";
 
 const BlogPost = (props) => {
   console.log("blogpost page");
