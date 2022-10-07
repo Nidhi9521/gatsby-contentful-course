@@ -36,10 +36,10 @@
   ],
   "license": "0BSD",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
+    "build": "CONTENTFUL_SPACE_ID=93ikzaev9eog CONTENTFUL_ACCESS_TOKEN=L3Z7MHgYHXy0D7KXHd_JGWNssTaFJNqlqxlkGnSt02c gatsby build",
+    "develop": "CONTENTFUL_SPACE_ID=93ikzaev9eog CONTENTFUL_ACCESS_TOKEN=L3Z7MHgYHXy0D7KXHd_JGWNssTaFJNqlqxlkGnSt02c gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "npm run develop",
+    "start": "CONTENTFUL_ACCESS_TOKEN=L3Z7MHgYHXy0D7KXHd_JGWNssTaFJNqlqxlkGnSt02c npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
