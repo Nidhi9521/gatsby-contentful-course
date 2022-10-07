@@ -29,7 +29,8 @@ module.exports = {
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID || "93ikzaev9eog",
         accessToken:
-          process.env.CONTENTFUL_ACCESS_TOKEN || "L3Z7MHgYHXy0D7KXHd_JGWNssTaFJNqlqxlkGnSt02c",
+          process.env.CONTENTFUL_ACCESS_TOKEN ||
+          "L3Z7MHgYHXy0D7KXHd_JGWNssTaFJNqlqxlkGnSt02c",
         host: process.env.CONTENTFUL_HOST,
       },
     },
@@ -52,7 +53,14 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/gatsby-icon.png`, 
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
       },
     },
   ],
